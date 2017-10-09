@@ -45,7 +45,7 @@ class MyApp(App):
             ''' pattern2 (kivyの機能のみで表示)  '''
             
             #texture = Texture.create(size=(img.shape[1], img.shape[0]), colorfmt='bgr', bufferfmt='ubyte') # BGRモードで用意,ubyteはデフォルト引数なので指定なくてもよい
-            #texture.blit_buffer(img.tostring(),colorfmt='bgr', bufferfmt='ubyte')  # ★ここもここもBGRで指定しないとRGBになって色の表示がおかしくなる
+            #texture.blit_buffer(img.tostring(),colorfmt='bgr', bufferfmt='ubyte')  # ★ここもBGRで指定しないとRGBになって色の表示がおかしくなる
             #texture.flip_vertical()    # 画像を上下反転させる
             
 
@@ -57,7 +57,7 @@ class MyApp(App):
 
             gray_to_rgb_img = cv2.cvtColor(gray_img, cv2.COLOR_GRAY2RGB)    # bilt_bufferでは1チェンネルのグレイ画像は表示できないので３チャンネルの画像に変換する
 
-            texture.blit_buffer(gray_to_rgb_img.tostring(),colorfmt='bgr', bufferfmt='ubyte')  # ★ここもここもBGRで指定しないとRGBになって色の表示がおかしくなる
+            texture.blit_buffer(gray_to_rgb_img.tostring(),colorfmt='bgr', bufferfmt='ubyte')  # ★ここもBGRで指定しないとRGBになって色の表示がおかしくなる
             texture.flip_vertical()    # 
 
             with widget.canvas:
@@ -67,11 +67,9 @@ class MyApp(App):
             ''' Pillowで画像を表示する '''
 
             #pillow_img = Image.open('kai_058Kazukiya17103_TP_V.jpg', 'r')
-            #texture = Texture.create(size=pillow_img.size) # BGRモードで用意,ubyteはデフォルト引数なので指定なくてもよい
+            #texture = Texture.create(size=pillow_img.size) 
             
-
             #texture.blit_buffer(pillow_img.tobytes())
-
 
             #texture.flip_vertical()    # 
             #with widget.canvas:
