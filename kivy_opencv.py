@@ -73,7 +73,7 @@ class MyApp(App):
 
             #texture.flip_vertical()    # 
             #with widget.canvas:
-            #    Rectangle(texture=texture ,pos=(0, 0), size=(gray_img.shape[1], gray_img.shape[0]))
+            #    Rectangle(texture=texture ,pos=(0, 0), size=pillow_img.size)
 
             return widget
 
